@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ tips.name }}</title>
+</head>
+<body>
+    <img src="{{ tips.img.url }}" alt="{{ tips.name }}">
+    <h1>{{ tips.name }}</h1>
+    <p>{{ tips.title }}</p>
+    <p>{{ tips.text }}</p>
+
+
+    <h2>Comments</h2>
+    {% for comment in tips.comments.all %}
+        <p><strong>{{ comment.user.username }}:</strong> {{ comment.text }}</p>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+        <h3>Add a Comment</h3>
+        <form action="{% url 'add_comment' tips.id %}" method="post">
+            {% csrf_token %}
+            <textarea name="text" placeholder="Izoh yozing..."></textarea>
+            <button type="submit">Jo'natish</button>
+        </form>
+    {% else %}
+        <p>Izoh qoldirish uchun, iltimos, tizimga kiring.</p>
+    {% endif %}
+</body>
+</html>
+{% endblock content %}
+

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% for Automotive in avto %}
+     <div>
+         <label>
+             <a><img src="{{Automotive.img.url}}"></a>
+             <h1>{{Automotive.name}}</h1>
+             <h1>{{Automotive.text}}</h1>
+         </label>
+     </div>
+{% endfor %}
+
+{% endblock content %}

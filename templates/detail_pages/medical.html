@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+s
+{% for Medical in med %}
+     <div>
+         <label>
+             <a><img src="{{Medical.img.url}}"></a>
+             <h1>{{Medical.name}}</h1>
+             <h1>{{Medical.text}}</h1>
+         </label>
+     </div>
+{% endfor %}
+
+{% endblock content %}

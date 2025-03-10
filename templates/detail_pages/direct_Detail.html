@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<img src="{{ dir.img.url }}" alt="{{ dir.name }}">
+<h1>{{ dir.name }}</h1>
+<p>{{ dir.rating }} Rating</p>
+<p>{{ dir.offer }}</p>
+<p>${{ dir.price }}</p>
+<p>{{ dir.location }}</p>
+<p>{{ dir.bio }}</p>
+
+    {% if user.is_authenticated %}
+        <h3>Add a Comment</h3>
+        <form action="{% url 'add_comment_2' dir.id %}" method="post">
+            {% csrf_token %}
+            <textarea name="text" placeholder="Izoh yozing..."></textarea>
+            <button type="submit">Jo'natish</button>
+        </form>
+    {% else %}
+        <p>Izoh qoldirish uchun, iltimos, tizimga kiring.</p>
+    {% endif %}
+
+ <h2>Comments</h2>
+    {% for comment in dir.comments_2.all %}
+        <p><strong>{{ comment.user.username }}:</strong> {{ comment.text }}</p>
+        <p>{{ comment.created_time }}</p>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+
+{% endblock content %}

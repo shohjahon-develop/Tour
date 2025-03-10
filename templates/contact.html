@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+<h1>Elegant Contact Form</h1>
+<form class="cf" method="POST">{% csrf_token %}
+  <div class="half left cf">
+    <input type="text" name="name" id="input-name" placeholder="Name">
+    <input type="email" name="email" id="input-email" placeholder="Email address">
+    <input type="text" name="subject" id="input-subject" placeholder="Subject">
+  </div>
+  <div class="half right cf">
+    <textarea type="text" name="message" id="input-message" placeholder="Message"></textarea>
+  </div>
+  <input type="submit" value="Submit" id="input-submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,294 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+      <!-- banner section start -->
+      <div class="banner_section layout_padding">
+        <div class="container">
+          <h1 class="discover_text">Discover</h1>
+          <h1 class="amazing_text">Your Amazing City</h1>
+          <p class="find_text">Find great places to stay , food , shop , & visit from local experts</p>
+          <div class="banner_section2">
+            <div class="row">
+              <div class="col-md-6">
+                <form method="get" action="{% url 'search' %}">
+    <input type="text" name="q" placeholder="Search..." class="form-control">
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+          </div>
+          <div class="icons_main">
+              <div class="box_1">
+                <div class="icon_1">
+                  <a href="{% url 'foods' %}"><h6 class="food_text" >FOOD</h6></a>
+                </div>
+              </div>
+              <div class="box_1">
+                <div class="icon_2">
+                  <a href="{% url 'medical' %}"><h6 class="food_text">Medical</h6></a>
+                </div>
+              </div>
+              <div class="box_1">
+                <div class="icon_3">
+                  <a href="{% url 'services' %}"><h6 class="food_text">Services</h6></a>
+                </div>
+              </div>
+              <div class="box_1">
+                <div class="icon_4">
+                  <a href="{% url 'jobs' %}"><h6 class="food_text">Jobs</h6></a>
+                </div>
+              </div>
+              <div class="box_1">
+                <div class="icon_5">
+                  <a href="{% url 'shop' %}"><h6 class="food_text">Shopping</h6></a>
+                </div>
+              </div>
+              <div class="box_1">
+                <div class="icon_6">
+                 <a href="{% url 'hotel' %}"><h6 class="food_text">Hotels</h6></a>
+                </div>
+              </div>
+              <div class="box_1">
+                <div class="icon_7">
+                  <a href="{% url 'auto' %}"><h6 class="food_text">automotive</h6></a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- banner section end -->
+      </div>
+      <!-- works section start -->
+      <div class="work_section layout_padding">
+        <div class="container">
+          <div class="work_main">
+            <h1 class="work_text">See <span style="color: #32caeb;">how it works</span></h1>
+            <div class="work_section2">
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <div class="choose_main">
+                  <div class="choose_left">
+                    <h1 class="number_text"><a href="#">01</a></h1>
+                  </div>
+                  <div class="choose_right">
+                    <h1 class="choose_text">Choose what to do </h1>
+                    <p class="many_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="choose_main">
+                  <div class="choose_left">
+                    <h1 class="number_text"><a href="#">02</a></h1>
+                  </div>
+                  <div class="choose_right">
+                    <h1 class="choose_text">Choose what to do </h1>
+                    <p class="many_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="choose_main">
+                  <div class="choose_left">
+                    <h1 class="number_text"><a href="#">03</a></h1>
+                  </div>
+                  <div class="choose_right">
+                    <h1 class="choose_text">Choose what to do </h1>
+                    <p class="many_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- works section end -->
+      <!-- articles section start -->
+      <div class="articles_section layout_padding">
+        <div class="container">
+          <h1 class="some_text">Some  <span style="color: #32caeb;">tips & articles</span></h1>
+          <p class="lorem_text">There are many variations of passagesThere are many variations of passages</p>
+          <div class="articles_section2">
+            <div class="row">
+              {% for tip in tips %}
+    <div class="col-sm-6 col-lg-3">
+        <a href="{% url 'tips_detail' tip.pk %}">
+            <div class="image_1"><img src="{{ tip.img.url }}"></div>
+        </a>
+        <h6 class="tips_text">{{ tip.name }}</h6>
+        <h2 class="variations_text"><a href="{% url 'tips_detail' tip.pk %}">{{ tip.title }}</a></h2>
+        <h4  class="ipsum_text">{{ tip.text }}</h4>
+    </div>
+{% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- articles section end -->
+<!--      &lt;!&ndash; features section start &ndash;&gt;-->
+<!--      <div class="features_section layout_padding">-->
+<!--        <div class="container">-->
+<!--          <h1 class="features_text">Features <span style="color: #32caeb;">Destinations</span></h1>-->
+<!--          <div class="features_section2">-->
+<!--            <div class="row">-->
+<!--              <div class="col-md-4">-->
+<!--                <div class="feature_menu">-->
+<!--                  <ul>-->
+<!--                    <li class="active"><a href="#">China</a></li>-->
+<!--                    <li><a href="#">Hong kong</a></li>-->
+<!--                    <li><a href="#">Malaysia</a></li>-->
+<!--                    <li><a href="#">Singapore</a></li>-->
+<!--                    <li><a href="#">Indonesia</a></li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--                <div class="seemore_bt"><a href="#">See More</a></div>-->
+<!--              </div>-->
+<!--              <div class="col-md-8">-->
+<!--                <div class="map-responsive">-->
+<!--                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="600" height="300" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>-->
+<!--              </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; features section end &ndash;&gt;-->
+      <!-- directory section start -->
+      <div class="directory_section layout_padding">
+        <div class="container-fluid">
+          <h1 class="directory_text">Our <span style="color: #32caeb;">directory</span></h1>
+          <div class="directory_section2">
+            <div class="row">
+              {% for Direct in dir %}
+              <div class="col-sm-6 col-lg-3">
+                <a href="{% url 'dir_detail' Direct.pk %}"><div class="image_5"><img src="{{Direct.img.url}}"></div></a>
+                <h3 class="travel_text">{{Direct.name}}</h3>
+                <div class="rating_section">
+                  <div class="rating_1">
+                    <div class="rating_main">
+                      <div class="rating_left">
+                        <div class="rating_text">{{Direct.rating}}</div>
+                      </div>
+                      <div class="rating_right">
+                        <div class="food_taital_3"><a href="#">Rating</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rating_1">
+                    <div class="food_taital"><a href="#">{{Direct.offer}}</a></div>
+                  </div>
+                  <div class="rating_1">
+                    <div class="food_taital_1"><a href="#">From <span style="color:#33d0f2;">$</span>{{Direct.price}}</a></div>
+                  </div>
+                  <div class="rating_1">
+                    <div class="food_taital_2"><a href="#"><img src="{% static 'images/map-icon.png' %}"><span class="Locations_padding0">{{Direct.location}}</span></a></div>
+                  </div>
+                </div>
+                <a href="{% url 'dir_detail' Direct.pk %}"><p class="lorem_ipsum_text">{{Direct.bio}}</p></a>
+                <div class="read_bt"><a href="{% url 'dir_detail' Direct.pk %}">Read More</a></div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- directory section end -->
+
+
+      <!-- testimonial section start -->
+<!--      <div class="testimonial_section layout_padding">-->
+<!--        <div class="container">-->
+<!--          <h1 class="testimonial_taital">Testimonial</h1>-->
+<!--          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">-->
+<!--            <ol class="carousel-indicators">-->
+<!--              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>-->
+<!--              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>-->
+<!--              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
+<!--            </ol>-->
+<!--            <div class="carousel-inner">-->
+<!--              <div class="carousel-item active">-->
+<!--                <div class="client_main">-->
+<!--                  <div class="client_left">-->
+<!--                    <div class="image_9"><img src="{% static 'images/img-9.png' %}"></div>-->
+<!--                    <h1 class="johndue_text">Johndue</h1>-->
+<!--                    <h5 class="farm_text">Farm & CO</h5>-->
+<!--                  </div>-->
+<!--                  <div class="client_right">-->
+<!--                    <div class="testimonial">-->
+<!--                      <div class="quote_left"><img src="{% static 'images/quote-left-icon.png' %}"></div>-->
+<!--                      <p class="dolor_text">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>-->
+<!--                      <div class="quote_right"><img src="{% static 'images/quote-right-icon.png' %}"></div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="carousel-item">-->
+<!--                <div class="client_main">-->
+<!--                  <div class="client_left">-->
+<!--                    <div class="image_9"><img src="{% static 'images/img-9.png' %}"></div>-->
+<!--                    <h1 class="johndue_text">Johndue</h1>-->
+<!--                    <h5 class="farm_text">Farm & CO</h5>-->
+<!--                  </div>-->
+<!--                  <div class="client_right">-->
+<!--                    <div class="testimonial">-->
+<!--                      <div class="quote_left"><img src="{% static 'images/quote-left-icon.png' %}"></div>-->
+<!--                      <p class="dolor_text">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>-->
+<!--                      <div class="quote_right"><img src="{% static 'images/quote-right-icon.png' %}"></div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="carousel-item">-->
+<!--                <div class="client_main">-->
+<!--                  <div class="client_left">-->
+<!--                    <div class="image_9"><img src="{% static 'images/img-9.png' %}"></div>-->
+<!--                    <h1 class="johndue_text">Johndue</h1>-->
+<!--                    <h5 class="farm_text">Farm & CO</h5>-->
+<!--                  </div>-->
+<!--                  <div class="client_right">-->
+<!--                    <div class="testimonial">-->
+<!--                      <div class="quote_left"><img src="{% static 'images/quote-left-icon.png' %}"></div>-->
+<!--                      <p class="dolor_text">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>-->
+<!--                      <div class="quote_right"><img src="{% static 'images/quote-right-icon.png' %}"></div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+      <!-- testimonial section end -->
+      <!-- contact section start -->
+<!--      <h1> Contact US</h1>-->
+<!--<form class="cf" method="POST">{% csrf_token %}-->
+<!--  <div class="half left cf">-->
+<!--    <input type="text" name="name" id="input-name" placeholder="Name">-->
+<!--    <input type="email" name="email" id="input-email" placeholder="Email address">-->
+<!--    <input type="text" name="subject" id="input-subject" placeholder="Subject">-->
+<!--  </div>-->
+<!--  <div class="half right cf">-->
+<!--    <textarea  type="text" name="message" id="input-message" placeholder="Message"></textarea>-->
+<!--  </div>-->
+<!--  <input type="submit" value="Submit" id="input-submit">-->
+<!--</form>-->
+   <!-- end contact  section -->
+<!--      <div class="subscribe_section">-->
+<!--        <div class="container">-->
+<!--          <div class="subscribe_main">-->
+<!--            <div class="subscribe_left">-->
+<!--              <h1 class="Subscribe_text">Subscribe Now</h1>-->
+<!--            </div>-->
+<!--              <form method="POST">{% csrf_token %}-->
+<!--            <div class="subscribe_middle">-->
+<!--              <input type="text" class="Enter_text" placeholder="Enter your email" name="email">-->
+<!--            </div>-->
+<!--            <div class="subscribe_right">-->
+<!--              <button><div class="subscribe_bt"><a  type="submit">Subscribe</a></div></button>-->
+<!--            </div>-->
+<!--                  </form>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; contact section end &ndash;&gt;-->
+{% endblock content %}

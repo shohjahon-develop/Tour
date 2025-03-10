@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for Food in food %}
+     <div>
+         <label>
+             <a><img src="{{Food.img.url}}"></a>
+             <h1>{{Food.name}}</h1>
+             <h1>{{Food.text}}</h1>
+         </label>
+     </div>
+{% endfor %}
+
+{% endblock content %}

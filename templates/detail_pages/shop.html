@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for Shopping  in shop %}
+     <div>
+         <label>
+             <a><img src="{{Shopping.img.url}}"></a>
+             <h1>{{Shopping.name}}</h1>
+             <h1>{{Shopping.text}}</h1>
+         </label>
+     </div>
+{% endfor %}
+
+{% endblock content %}

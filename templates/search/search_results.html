@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--<h1>Search Results for "{{ query }}"</h1>-->
+
+{% if tips or directs or foods or medicals or services or shoppings or hotels %}
+    {% if tips %}
+        <h2>Tips</h2>
+        <ul>
+            {% for tip in tips %}
+                <h1><li><a href="{% url 'tips_detail' tip.pk %}">{{ tip.name }}...</a></li></h1>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% if directs %}
+        <h2>Directs</h2>
+        <ul>
+            {% for direct in directs %}
+                <h1><li><a href="{% url 'dir_detail' direct.pk %}">{{ direct.name }}...</a></li></h1>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if foods %}
+        <h2>Foods</h2>
+        <ul>
+            {% for food in foods %}
+                <h1><li><a href="{% url 'foods'  %}">{{ food.name }}...</a></li></h1>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if medicals %}
+        <h2>Medicals</h2>
+        <ul>
+            {% for medical in medicals %}
+                <h1><a href="{% url 'medical' %}"><li>{{ medical.name }}...</li></a></h1>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if services %}
+        <h2>Services</h2>
+        <ul>
+            {% for service in services %}
+                <h1><a href="{% url 'services' %}"><li>{{ service.name }}...</li></a></h1>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if shoppings %}
+        <h2>Shopping</h2>
+        <ul>
+            {% for shopping in shoppings %}
+                <h1><a href="{% url 'shop' %}"><li>{{ shopping.name }}...</li></a></h1>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if hotels %}
+        <h2>Hotels</h2>
+        <ul>
+            {% for hotel in hotels %}
+                <h1><a href="{% url 'hotel' %}"><li>{{ hotel.name }}...</li></a></h1>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% else %}
+    <p>No results found.</p>
+{% endif %}
+{% endblock content %} %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

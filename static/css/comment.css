@@ -1,0 +1,50 @@
+/* Izoh uchun umumiy uslub */
+.comment {
+    background-color: #f4f4f4;  /* Fonda ochiq kulrang rang */
+    border-radius: 10px;        /* Burchaklarni yumshatish */
+    padding: 15px;              /* Ichki joy qo'shish */
+    margin-bottom: 15px;        /* Izohlar orasidagi bo'shliq */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Yengil soya */
+}
+
+/* Izoh muallifining nomini rangli qilish */
+.comment strong {
+    color: #3498db;  /* Muallif nomi uchun rang (ko'k) */
+    font-weight: bold;  /* Qalin harf */
+}
+
+/* Izoh matnini rangli qilish */
+.comment p {
+    color: #555;  /* Matn uchun rang (kulrang) */
+    font-size: 16px;  /* Matn o'lchami */
+    line-height: 1.5;  /* Matn orasidagi bo'shliq */
+}
+
+/* Foydalanuvchi tomonidan yozilgan yangi izoh uchun maxsus rang */
+.comment.new {
+    background-color: #e6ffe6;  /* Yashil rang */
+    border-left: 5px solid #2ecc71;  /* Yashil chiziq chap tomonda */
+}
+
+/* Izoh yuborish formasi */
+textarea {
+    width: 100%;  /* Matn maydoni kengligi */
+    padding: 10px;  /* Ichki joy */
+    border: 1px solid #ccc;  /* Ramka */
+    border-radius: 5px;  /* Yumshoq burchaklar */
+    font-size: 16px;  /* Matn o'lchami */
+}
+
+button {
+    background-color: #3498db;  /* Tugma rangi (ko'k) */
+    color: white;  /* Matn rangi (oq) */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;  /* Kursorni qo'yish */
+}
+
+button:hover {
+    background-color: #2980b9;  /* Hover holati (tugma rangi o'zgaradi) */
+}

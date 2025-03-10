@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for Hotel in hotels %}
+     <div>
+         <label>
+             <a><img src="{{Hotel.img.url}}"></a>
+             <a><img src="{{Hotel.img2.url}}"></a>
+             <h1>{{Hotel.name}}</h1>
+             <h1>{{Hotel.text}}</h1>
+         </label>
+     </div>
+{% endfor %}
+
+{% endblock content %}
